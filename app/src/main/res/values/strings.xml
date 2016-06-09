@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">YLE Programs</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="load">load</string>
+    <string name="title_activity_item">YLE Program</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+
+    <string name="pref_app_key">YLE App Key</string>
+    <string name="pref_app_id"> YLE App ID</string>
+    <string name="pref_offset">Offset</string>
+    <string name="default_id">b430a3e1</string>
+    <string name="default_key">7f38610e4807ccaa68e3b72bca97a0c7</string>
+    <string name="default_offset">25</string>
+    <string name="next">Load Programs</string>
+
+
+</resources>
