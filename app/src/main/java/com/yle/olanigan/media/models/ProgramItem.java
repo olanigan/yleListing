@@ -8,17 +8,20 @@ public class ProgramItem {
     private String id;
     private String title;
     private String description;
+    private String lastModified;
 
     public ProgramItem (){
         this.id = "";
         this.title = "";
         this.description = "";
+        this.lastModified = "";
     }
 
-    public ProgramItem (String id, String title, String description){
+    public ProgramItem (String id, String title, String description, String lastModified){
         this.id = id;
         this.title = title;
         this.description = description;
+        this.lastModified = lastModified;
     }
 
     public String getId() {
@@ -43,5 +46,13 @@ public class ProgramItem {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getLastModified() {
+        return lastModified;
+    }
+
+    public void setLastModified(String lastModified) {
+        this.lastModified = lastModified;
     }
 }

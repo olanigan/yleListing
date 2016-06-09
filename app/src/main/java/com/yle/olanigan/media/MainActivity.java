@@ -30,7 +30,10 @@ import com.yle.olanigan.media.models.ProgramItem;
 public class MainActivity extends AppCompatActivity {
 
     private ListView listView;
-   // private AdapterViewCompat.OnItemClickListener listener;
+    private static String TAG_TITLE = "title";
+    private static String TAG_DESC = "description";
+    private static String TAG_MOD = "modified";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,12 +60,16 @@ public class MainActivity extends AppCompatActivity {
                     ProgramItem item = Program.getByTitle(title);
 
                 Intent detailIntent = new Intent(MainActivity.this,ItemActivity.class);
-                detailIntent.putExtra("title", item.getTitle());
-                detailIntent.putExtra("description", item.getDescription());
+                detailIntent.putExtra(TAG_TITLE, item.getTitle());
+                detailIntent.putExtra(TAG_DESC, item.getDescription());
+                detailIntent.putExtra(TAG_MOD, item.getLastModified());
                 startActivity(detailIntent);
 
             }
         });
+
+        //Get Program Listing
+        new APICallTask().execute("");
     }
 
 
@@ -87,10 +94,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
 
         }
-        else if(id == R.id.load){
-            new APICallTask().execute("");
 
-        }
 
         return super.onOptionsItemSelected(item); /**/
 
@@ -112,22 +116,20 @@ public class MainActivity extends AppCompatActivity {
         }
 
         protected void onPostExecute(List<Datum> results){
-            StringBuilder sb = new StringBuilder();
-           ArrayList<String> sList = new ArrayList<String>();
-            // String[] sList;
-            //List<Datum> response = results.;
+            //List for Titles
+             ArrayList<String> sList = new ArrayList<String>();
+
+
             for(Datum datum: results){
-                Log.d("Task Output", datum.getId() + " - " + datum.getTitle().getFi());
-               // sb.append(datum.getId() + "\n");
 
                 String id = datum.getId();
                 String title = datum.getTitle().getFi() != null ? datum.getTitle().getFi() : datum.getTitle().getSv();
                 String description = datum.getDescription().getFi() != null ? datum.getDescription().getFi() : datum.getDescription().getSv();
-
+                String lastModified = datum.getIndexDataModified();
                 if(title != null)
                     sList.add(title);
 
-                ProgramItem item = new ProgramItem(id,title,description);
+                ProgramItem item = new ProgramItem(id,title,description,lastModified);
                 Program.addProgram(item);
             }
             /*runOnUiThread(new Runnable() {
@@ -145,8 +147,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void fetchProgram(View v){
-        new APICallTask().execute("");
-    }
+
 
 }

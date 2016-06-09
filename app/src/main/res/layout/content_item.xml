@@ -40,4 +40,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         ></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lastUpdated"
+        android:padding="@dimen/small_margin"
+        android:background="@color/colorAccent"
+        ></TextView>
+
+    <TextView
+        android:id = "@+id/lastModifiedView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ></TextView>
 </LinearLayout>

@@ -17,10 +17,14 @@
     <string name="pref_app_key">YLE App Key</string>
     <string name="pref_app_id"> YLE App ID</string>
     <string name="pref_offset">Offset</string>
+    <string name="pref_limit">Limit</string>
     <string name="default_id">b430a3e1</string>
     <string name="default_key">7f38610e4807ccaa68e3b72bca97a0c7</string>
-    <string name="default_offset">25</string>
+    <string name="default_offset">20</string>
+    <string name="default_limit">20</string>
     <string name="next">Load Programs</string>
+    <string name="lastUpdated">Last Updated</string>
+    <string name="meta_offset">Meta Offset</string>
 
 
 </resources>

@@ -32,16 +32,16 @@ public class Meta {
     private int clip;
 
 
-    public String getOffset() {
-        return offset;
+    public int getOffset() {
+        return Integer.parseInt(offset);
     }
 
     public void setOffset(String offset) {
         this.offset = offset;
     }
 
-    public String getLimit() {
-        return limit;
+    public int getLimit() {
+        return Integer.parseInt(limit);
     }
 
     public void setLimit(String limit) {

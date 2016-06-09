@@ -87,10 +87,6 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
         setupActionBar();
     }
 
-    @Override
-    public void onBackPressed(){
-        startActivity (new Intent(this, MainActivity.class));
-    }
     /**
      * Set up the {@link android.app.ActionBar}, if the API is available.
      */
@@ -148,14 +144,14 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             // guidelines.
             bindPreferenceSummaryToValue(findPreference(getResources().getString(R.string.pref_app_id)));
             bindPreferenceSummaryToValue(findPreference(getResources().getString(R.string.pref_app_key)));
-            bindPreferenceSummaryToValue(findPreference(getResources().getString(R.string.pref_offset)));
+            bindPreferenceSummaryToValue(findPreference(getResources().getString(R.string.pref_limit)));
         }
 
         @Override
         public boolean onOptionsItemSelected(MenuItem item) {
             int id = item.getItemId();
             if (id == android.R.id.home) {
-                startActivity(new Intent(getActivity(), SettingsActivity.class));
+                startActivity(new Intent(getActivity(), MainActivity.class));
                 return true;
             }
             return super.onOptionsItemSelected(item);

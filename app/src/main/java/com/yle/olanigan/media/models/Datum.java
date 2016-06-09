@@ -2,6 +2,9 @@ package com.yle.olanigan.media.models;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by Engineering on 6/9/2016.
  */
@@ -18,6 +21,12 @@ public class Datum {
 
     @SerializedName("availability")
     private String availability;
+
+    @SerializedName("typeMedia")
+    private String typeMedia;
+
+    @SerializedName("indexDataModified")
+    private Date indexDataModified;
 
     public String getId() {
         return id;
@@ -49,5 +58,24 @@ public class Datum {
 
     public void setAvailability(String availability) {
         this.availability = availability;
+    }
+
+    public String getTypeMedia() {
+        return typeMedia;
+    }
+
+    public void setTypeMedia(String typeMedia) {
+        this.typeMedia = typeMedia;
+    }
+
+    public String getIndexDataModified() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd 'at' HH:mm:ss z");
+
+        return sdf.format(indexDataModified);
+    }
+
+    public void setIndexDataModified(Date indexDataModified) {
+
+        this.indexDataModified = indexDataModified;
     }
 }

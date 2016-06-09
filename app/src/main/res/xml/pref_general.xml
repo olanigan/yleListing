@@ -25,12 +25,13 @@
     android:singleLine="true"
     android:title="@string/pref_app_key" />
 
+
     <EditTextPreference
-        android:defaultValue="@string/default_offset"
-        android:inputType="numberSigned"
-        android:key="@string/pref_offset"
+        android:defaultValue="@string/default_limit"
+        android:inputType="number"
+        android:key="@string/pref_limit"
         android:maxLines="1"
         android:selectAllOnFocus="true"
         android:singleLine="true"
-        android:title="@string/pref_offset" />
+        android:title="@string/pref_limit" />
 </PreferenceScreen>

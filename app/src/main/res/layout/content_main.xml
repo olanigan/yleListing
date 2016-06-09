@@ -26,10 +26,4 @@
         android:dividerHeight="@dimen/small_margin"
         android:padding="@dimen/small_margin"></ListView>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/small_margin"
-        android:text="@string/next"
-        android:onClick="fetchProgram"/>
 </LinearLayout>
